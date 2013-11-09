@@ -1,0 +1,3 @@
+<?php	unset($styledb);
+		$styledb['name']='zawhangye';
+		$styledb['keywords']='zawhangye';?>

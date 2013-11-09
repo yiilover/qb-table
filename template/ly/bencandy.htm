@@ -1,0 +1,119 @@
+<!--
+<?php
+$backdb[subject] || ($backdb[subject]="没有了") && ($backdb[click]="return false;");
+$nextdb[subject] || ($nextdb[subject]="没有了") && ($nextdb[click]="return false;");
+print <<<EOT
+--> 
+<div id="main">
+			<div id="left">
+				<div class="topic">
+					<div class="topic_end">
+						<div class="topic_main">产品中心</div>
+						<a href="/list.php?fid=29" class="more"></a>
+					</div>
+				</div>
+				<a href="/list.php?fid=46" class="menu_top">球面调心滚子轴承</a>
+				<a href="/list.php?fid=47" class="menu">球面滚子推力轴承</a>
+				<a href="/list.php?fid=48" class="menu">CRAB圆环滚子轴承</a>
+				<a href="/list.php?fid=49" class="menu">剖分式球面滚子轴承</a>
+				<a href="/list.php?fid=50" class="menu">剖分式圆柱滚子轴承</a>
+				<a href="/list.php?fid=52" class="menu">圆柱滚子轴承</a>
+				<a href="/list.php?fid=53" class="menu">圆锥滚子轴承</a>
+				<a href="/list.php?fid=54" class="menu">圆柱滚子推力轴承</a>
+				<a href="/list.php?fid=55" class="menu">圆锥滚子推力轴承</a>
+				<a href="/list.php?fid=56" class="menu">深沟球轴承</a>
+				<a href="/list.php?fid=57" class="menu">角接触球轴承</a>
+				<a href="/list.php?fid=58" class="menu">推力球轴承</a>
+				<a href="/list.php?fid=59" class="menu">自调心球轴承</a>
+				<a href="/list.php?fid=60" class="menu_bottom">角接触推力球轴承</a>
+			</div>
+			<div id="middle">
+				<div class="m_topic_b"><div class="m_topic">当前位置：$GuideFid[$fid]<div class="m_topic_bg"></div></div></div>
+				<div class="m_pics">
+						<table border="0" cellspacing="0" cellpadding="0" align="center" class="dragTable" id="view_article">
+        <tr> 
+          <td width="630" class="head"> 
+            <h3 class="L"></h3>
+
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle"> 
+            <div style="font-size:16px; text-align:center; padding-bottom:20px; font-weight: bold; padding-top: 20px;">$rsdb[title]</div>
+            <div class="fit_title">$rsdb[subhead]</div>
+            <div style="font-size:12px; text-align:center; padding-bottom:10px;padding-top: 1px;"><a editurl='$webdb[www_url]/do/job.php?job=bencandy&fid=$fid&id=$id&&type=$jobs&act=do'>{$rsdb[posttime]}</a> 
+              来源:<a href="$rsdb[copyfromurl]" target="_blank">{$rsdb[copyfrom]}</a> 
+              作者:{$rsdb[author]} 浏览:<font id="hits">{$rsdb[hits]}</font>次 
+              评论:<font id="commnetsnum">{$rsdb[comments]}</font>条 </div>
+            <table class="content" width="100%" cellspacing="0" cellpadding="0" style='TABLE-LAYOUT: fixed;WORD-WRAP: break-word' align="center">
+              <tr> 
+                <td align="left" class="content_word" id="read_tpc"><font id="zoom" face="宋体"><span id="post1">
+                  <div style="float:left;">{$AD_label['article_content']}</div>
+                  $rsdb[content]</span></font></td>
+              </tr>
+            </table>
+            <!--//投票
+EOT;
+if($rsdb[ifvote]){print <<<EOT
+-->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" id="content_vote">
+              <tr> 
+                <td>
+                  <SCRIPT src="$webdb[www_url]/vote/vote.php?job=js&aid=$rsdb[aid]"></SCRIPT>
+                </td>
+              </tr>
+            </table>
+            <!--
+EOT;
+}print <<<EOT
+-->
+            <table width="98%" border="0" cellspacing="0" cellpadding="0" style='TABLE-LAYOUT: fixed;WORD-WRAP: break-word;' align="center">
+              <tr> 
+                <td colspan="2" align="center">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td colspan="2" align="center" class="page" height="25">$showpage</td>
+              </tr>
+              
+              <tr>
+              <td colspan="2" style="text-align:right">
+              <div>
+
+              </td>
+              </tr>
+              <tr class="nextpage"> 
+                <td width="50%" align="left"><a href="bencandy.php?fid=$backdb[fid]&id=$backdb[aid]" onClick="$backdb[click]">上一篇</a>：<a href="bencandy.php?fid=$backdb[fid]&id=$backdb[aid]" onClick="$backdb[click]" title="$backdb[title]">$backdb[subject]</a></td>
+                <td width="50%" align="right" height="25"><a href="bencandy.php?fid=$nextdb[fid]&id=$nextdb[aid]" onClick="$nextdb[click]">下一篇</a>：<a href="bencandy.php?fid=$nextdb[fid]&id=$nextdb[aid]" onClick="$nextdb[click]" title="$nextdb[title]">$nextdb[subject]</a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+				</div>
+			</div>
+			<div id="right">
+				<div class="topic">
+					<div class="topic_end">
+						<div class="topic_main">联系我们</div>
+						<a href="/bencandy.php?fid=45&aid=676" class="more"></a>
+					</div>
+				</div>
+				<div class="ob_b">
+					<div class="ob_m">
+						<div class="i_topic">国内贸易</div>
+						<div class="i_txt">电话：400 000 3540<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;041185518888<br /><span class="b">杨先生</span><br />移动电话：18640843456<br />邮箱：yxn@zwa.cc<br />QQ：51143988<br /><span class="b">高女士</span><br />移动电话：15641175678<br />邮箱：gx@zwa.cc<br />QQ：123528811<br /></div>
+						<div class="i_topic">国际贸易</div>
+						<div class="i_txt">电话：+8641185518978<br /><span class="b">Celine（付秀玲）</span><br />移动电话：18524117277<br />邮箱：zwa@zwa.cc<br />MSN：zero20090407@live.cn<br />SKYPE：ZWA-Celine</div>
+						<div class="i_topic">技术中心</div>
+						<div class="i_txt">电话：0411-85518878<br />传真:85518778<br /><span class="b">高工  吴工  姜工  邹工</span></div>
+					</div>
+				</div>
+				<a href="#" id="service"></a>
+			</div>
+		</div>
+
+<!--
+EOT;
+?>
+-->

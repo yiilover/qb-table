@@ -1,0 +1,24 @@
+<!--
+<?php
+foreach($data AS $r){
+print <<<EOT
+-->
+
+<tr height="19" style="cursor:pointer;" onmousemove="this.className='bg2'" onmouseout="this.className=''" class="">
+<!--
+EOT;
+foreach($r[module] AS $v){
+print <<<EOT
+-->
+<td class="et6" ><a href="$webdb[www_url]/bencandy.php?fid=$r[fid]&aid=$r[aid]">$v</a></td>
+<!--
+EOT;
+}print <<<EOT
+-->
+</tr>
+
+ <!--
+EOT;
+}
+?>
+-->

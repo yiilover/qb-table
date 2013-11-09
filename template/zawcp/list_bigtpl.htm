@@ -1,0 +1,41 @@
+<!--
+<?php
+foreach($listdb_moresort AS $key2=>$rss){
+print <<<EOT
+--> 
+<DT>
+  <DIV class=title2><a href="list.php?fid=$rss[fid]">更多...</A> <SPAN>〓  {$rss[name]} 〓</SPAN></DIV>
+  <TABLE class=pdy border=0 cellSpacing=0 cellPadding=0 width="100%"   align=center valign="middle">
+    <TBODY>
+    <TR>
+      <TD height=22 vAlign=center width=420 align=middle cellpadding="0"    cellspacing="0">文章标题 </TD>
+      <TD height=22 vAlign=center width=100 align=left cellpadding="0"     cellspacing="0">作 者 </TD>
+      <TD height=22 vAlign=center width=70 align=left cellpadding="0"    cellspacing="0">发布时间 </TD></TR></TBODY></TABLE>
+ 
+  <UL class=pdpage>
+      <!--
+EOT;
+foreach($rss[article] AS $key1=>$rs){
+$rs[fontweight] =($rs[fonttype]==1)?'font-weight:bold;':'';
+$rs[fontcolor]  =$rs[titlecolor]?"color:$rs[titlecolor];":'';
+print <<<EOT
+--> 
+	<TABLE style="BORDER-BOTTOM: #3b3f45 1px solid" border=0 cellSpacing=0   cellPadding=0 width="100%" align=center valign="middle">
+      <TBODY>
+      <TR>
+        <TD vAlign=center width=420 align=left cellpadding="0"      cellspacing="0">
+		<LI id=bin789><a href="bencandy.php?fid=$rs[fid]&id=$rs[aid]" target="$target" title='$rs[full_title]' style="font-size:13px;{$rs[fontweight]}{$rs[fontcolor]}">$rs[title]</a>  </LI></TD>
+        <TD  style="PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 16px; COLOR: #77bb11; PADDING-TOP: 3px"   height=20 vAlign=center width=100 align=left cellpadding="0" 
+        cellspacing="0"><SPAN>$rs[username]</SPAN> </TD>
+        <TD  style="PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 16px; COLOR: #616a72; PADDING-TOP: 3px"   vAlign=center width=70 align=left cellpadding="0" 
+          cellspacing="0">{$rs[posttime]}</TD></TR></TBODY></TABLE>
+      <!--
+EOT;
+}print <<<EOT
+-->
+</UL></DT>
+<!--
+EOT;
+}
+?>
+-->

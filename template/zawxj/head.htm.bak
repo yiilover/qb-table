@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--<?php
+print <<<EOT
+-->
+<head>
+<title>$titleDB[title]</title>
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/zaw/css/zaw.css">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="$titleDB[keywords]">
+<meta name="description" content="$titleDB[description]">
+</head>
+<body>
+	<div id="zaw">
+		<div id="top">
+			<div id="logo"></div>
+			<div id="chinese"></div>
+			<div id="english"></div>
+			<div id="search"><input id="search_input" type="text" /></div>
+			<div id="home"><a href="#">加入收藏</a></div>
+		</div>
+		<div id="nav">
+			<div id="fo">
+				<a href="/" class="item">首页</a>
+				<a href="/bencandy.php?fid=43&aid=675" class="item">关于我们</a>
+				<a href="#" class="item">产品中心</a>
+				<a href="/list.php?fid=41" class="item">行业解决方案</a>
+				<a href="#" class="item">质量控制</a>
+				<a href="#" class="item">新闻和媒体</a>
+				<a href="#" class="item">轴承维修与技术支持</a>
+				<a href="/bencandy.php?fid=45&aid=676" class="item">联系我们</a>
+			</div>
+		</div>
+<!--
+EOT;
+?>
+-->

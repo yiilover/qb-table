@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--<?php
+if($webdb[ShowMenu]){
+	$sonmenu=@include_once(ROOT_PATH.'data/menu_cache.php');
+}else{
+	$returnjs="return ;";
+    $sonmenu="";
+}
+$GuideFid[$fid]=str_replace("<a href='$webdb[www_url]' class='guide_menu'>&gt;首页</a>","",$GuideFid[$fid]);
+$bodyondblclick = (function_exists('label_array')&&$web_admin&&!$MakeIndex) ?"dblclick_label();":"";
+print <<<EOT
+-->
+<head>
+<title>$titleDB[title]</title>
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/zaw/css/zaw.css">
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/default/thickbox.css">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="$titleDB[keywords]">
+<meta name="description" content="$titleDB[description]">
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+//屏蔽可忽略的js脚本错误
+function killErr(){
+	return true;
+}
+window.onerror=killErr;
+</SCRIPT>
+<!--
+EOT;
+if($webdb[cookieDomain]){print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript">
+//解决不同域名的框架跨域问题
+document.domain = "$webdb[cookieDomain]";
+</SCRIPT>
+<!--
+EOT;
+}print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/inc.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/default.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/swfobject.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/jquery-1.2.6.min.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/thickbox.js"></SCRIPT>
+<body ondblclick="$bodyondblclick">
+
+<body>
+	<div id="zaw">
+		<div id="top">
+			<div id="logo"></div>
+			<div id="chinese"></div>
+			<div id="english"></div>
+			<div id="search"><input id="search_input" type="text" /></div>
+			<div id="home"><a href="#">加入收藏</a></div>
+		</div>
+		<div id="nav">
+			<div id="fo">
+				<a href="/" class="item">首页</a>
+				<a href="/bencandy.php?fid=43&aid=675" class="item">关于我们</a>
+				<a href="/list.php?fid=29" class="item">产品中心</a>
+				<a href="/list.php?fid=41" class="item">行业解决方案</a>
+				<a href="/list.php?fid=42" class="item">质量控制</a>
+				<a href="/list.php?fid=1" class="item">新闻和媒体</a>
+				<a href="/list.php?fid=44" class="item">技术支持与轴承维修</a>
+				<a href="/bencandy.php?fid=45&aid=676" class="item">联系我们</a>
+			</div>
+			<div class="searchs">
+				<a href="javascript:;" title="高级搜索" class="thickbox" onclick="javascript:$('#TB_window').css('display','block')">
+          高级搜索</a>
+			</div>
+		</div>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--//目的是为了做风格方便
+document.write('<div class="wrap">');
+//-->
+</SCRIPT>
+<!--
+EOT;
+?>
+-->

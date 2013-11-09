@@ -1,0 +1,24 @@
+<!--
+<?php
+foreach($listdb AS $key=>$rs){
+$rs[fontweight] =($rs[fonttype]==1)?'font-weight:bold;':'';
+$rs[fontcolor]  =$rs[titlecolor]?"color:$rs[titlecolor];":'';
+$rs[content]=get_word($rs[content],$fidDB[config][listContentNum]>0?$fidDB[config][listContentNum]:150);
+$target=$rs[target]?'_blank':'_self';
+$rs[picurl]=tempdir("$rs[picurl]");
+	$rs[picurl]=filtrate($rs[picurl]);
+print <<<EOT
+-->
+<UL class=e2>
+  <LI><A class=preview 
+  href="bencandy.php?fid=$rs[fid]&id=$rs[aid]"><IMG  onerror="this.src='$webdb[www_url]/images/default/nopic.jpg'" width="90" height="70" src="$rs[picurl]"></A> <A class=title 
+  href="bencandy.php?fid=$rs[fid]&id=$rs[aid]"><B>$rs[title]</B></A>  <SPAN  class=info><SMALL>作者：</SMALL>($rs[username])<SMALL>日期：</SMALL>({$rs[posttime]}) <SMALL>点击：</SMALL>{$rs[hits]} 
+  <SMALL>好评：</SMALL>$rs[digg_num] </SPAN>
+  <DIV class=intro2>{$rs[content]}
+  </DIV></LI>
+</UL>
+<!--
+EOT;
+}
+?>
+-->

@@ -1,0 +1,121 @@
+<!--
+<?php
+$backdb[subject] || ($backdb[subject]="没有了") && ($backdb[click]="return false;");
+$nextdb[subject] || ($nextdb[subject]="没有了") && ($nextdb[click]="return false;");
+print <<<EOT
+--> 
+<div id="main">
+			<div id="left">
+				<div class="topic">
+					<div class="topic_end">
+						<div class="topic_main">产品中心</div>
+						<a href="#" class="more"></a>
+					</div>
+				</div>
+				<a href="#" class="menu_top">球面调心滚子轴承</a>
+				<a href="#" class="menu">球面滚子推力轴承</a>
+				<a href="#" class="menu">CRAB圆环滚子轴承</a>
+				<a href="#" class="menu">剖分式球面滚子轴承</a>
+				<a href="#" class="menu">剖分式圆柱滚子轴承</a>
+				<a href="#" class="menu">圆柱滚子轴承</a>
+				<a href="#" class="menu">圆锥滚子轴承</a>
+				<a href="#" class="menu">圆柱滚子推力轴承</a>
+				<a href="#" class="menu">圆锥滚子推力轴承</a>
+				<a href="#" class="menu">深沟球轴承</a>
+				<a href="#" class="menu">角接触球轴承</a>
+				<a href="#" class="menu">推力球轴承</a>
+				<a href="#" class="menu">自调心球轴承</a>
+				<a href="#" class="menu_bottom">角接触推力球轴承</a>
+			</div>
+			<div id="middle">
+				<div class="m_topic_b"><div class="m_topic">当前位置：$GuideFid[$fid]<div class="m_topic_bg"></div></div></div>
+				<div class="m_pics"> <script src="images/default/setday.js"></script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="MainTable">
+  <tr> 
+    <td width="100%" height="393" valign="top" class="Main"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="dragTable">
+        <tr> 
+          <td class="head"> 
+            <h3 class="L"></h3>
+            <span class="TAG">$fidDB[name]</span> 
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle"> 
+            <script>
+function upfile(url,name,size,ty){
+	document.getElementById(ty).value=url;
+}
+</script><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="padding-bottom:10px;">$fidDB[about]</td>
+  </tr>
+</table>
+            <table width="99%" border="0" cellspacing="5" cellpadding="5" id="bigtable">
+              <form name="FORM" method="post" action="?action=$atc" enctype="multipart/form-data">
+                
+<!--
+EOT;
+if($fidDB[usetitle]){print <<<EOT
+-->
+				<tr> 
+                  <td width="18%">标题:<font color=red>(必填)</font></td>
+                  <td width="82%"> 
+                    <input type="text" name="postdb[title]" id="atc_title" size="50" value="$rsdb[title]">
+                  </td>
+                </tr>
+<!--
+EOT;
+}print <<<EOT
+-->
+
+                <tr> <td >咨询产品:<font color=red>(必填)</font><br></td> <td > <input type='text' name='postdb[my_441]' id='atc_my_441' size='10' value='$rsdb[my_441]'> </td></tr><tr> <td >数量:<font color=red>(必填)</font><br></td> <td > <input type='text' name='postdb[my_609]' id='atc_my_609' size='10' value='$rsdb[my_609]'> </td></tr><tr> <td >预计多久采购?:<font color=red>(必填)</font><br></td> <td > <input type='text' name='postdb[my_510]' id='atc_my_510' size='10' value='$rsdb[my_510]'> </td></tr><tr> <td >是否已有预算?:<br></td> <td ><input style='border:0px;' type='radio' name='postdb[my_716]' value='有' {$rsdb[my_716]['有']}>有<input style='border:0px;' type='radio' name='postdb[my_716]' value='没有' {$rsdb[my_716]['没有']}>没有</td></tr><tr> <td >您希望的联系方式?:<br></td> <td ><input style='border:0px;' type='radio' name='postdb[my_925]' value='通过Email' {$rsdb[my_925]['通过Email']}>通过Email<input style='border:0px;' type='radio' name='postdb[my_925]' value='通过电话' {$rsdb[my_925]['通过电话']}>通过电话<input style='border:0px;' type='radio' name='postdb[my_925]' value='通过传真' {$rsdb[my_925]['通过传真']}>通过传真</td></tr><tr> <td >公司名称:<font color=red>(必填)</font><br></td> <td > <input type='text' name='postdb[my_160]' id='atc_my_160' size='10' value='$rsdb[my_160]'> </td></tr><tr> <td >个人名称:<font color=red>(必填)</font><br></td> <td > <input type='text' name='postdb[my_320]' id='atc_my_320' size='10' value='$rsdb[my_320]'> </td></tr><tr> <td >Email:<font color=red>(必填)</font><br></td> <td > <input type='text' name='postdb[my_136]' id='atc_my_136' size='10' value='$rsdb[my_136]'> </td></tr><tr> <td >电话:<br></td> <td > <input type='text' name='postdb[my_329]' id='atc_my_329' size='10' value='$rsdb[my_329]'> </td></tr><tr> <td >传真:<br></td> <td > <input type='text' name='postdb[my_38]' id='atc_my_38' size='10' value='$rsdb[my_38]'> </td></tr><tr> <td >街道地址:<br></td> <td > <input type='text' name='postdb[my_676]' id='atc_my_676' size='10' value='$rsdb[my_676]'> </td></tr><tr> <td >城市:<br></td> <td > <input type='text' name='postdb[my_199]' id='atc_my_199' size='10' value='$rsdb[my_199]'> </td></tr><tr> <td >国家:<br></td> <td > <input type='text' name='postdb[my_514]' id='atc_my_514' size='10' value='$rsdb[my_514]'> </td></tr><tr><td >备注:<br></td><td ><textarea name='postdb[my_205]' id='atc_my_205' cols='70' rows='8'>$rsdb[my_205]</textarea></td></tr> 
+                <tr> 
+                  <td width="18%">&nbsp;</td>
+                  <td width="82%"> 
+                    <input type="submit" name="Submit" value="提 交" >
+                    <input type="hidden" name="mid" value="$mid">
+                    <input type="hidden" name="id" value="$id">
+                  </td>
+                </tr>
+              </form>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="foot"> 
+            <h3 class="L"></h3>
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table></div>
+			</div>
+			<div id="right">
+				<div class="topic">
+					<div class="topic_end">
+						<div class="topic_main">联系我们</div>
+						<a href="#" class="more"></a>
+					</div>
+				</div>
+				<div class="ob_b">
+					<div class="ob_m">
+						<div class="i_topic">国内贸易</div>
+						<div class="i_txt">电话：400 000 3540<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;041185518888<br /><span class="b">杨先生</span><br />移动电话：18640843456<br />邮箱：yxn@zwa.cc<br />QQ：51134988<br /><span class="b">高女士</span><br />移动电话：15641175678<br />邮箱：gx@zwa.cc<br />QQ：123528811<br /></div>
+						<div class="i_topic">国内贸易</div>
+						<div class="i_txt">电话：+8641185518978<br /><span class="b">Celine（付秀玲）</span><br />移动电话：17524117277<br />邮箱：zwa@zwa.cc<br />MSN：zero20090407@live.cn<br />SKYPE：ZWA-Celine</div>
+						<div class="i_topic">技术中心</div>
+						<div>电话：0411-8888888</div>
+					</div>
+				</div>
+				<a href="#" id="service"></a>
+			</div>
+		</div>
+
+<!--
+EOT;
+?>
+-->
