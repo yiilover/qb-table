@@ -31,23 +31,34 @@ print <<<EOT
           <h4>&nbsp;</h4>
           <h4>$fidDB[name]</h4>
           <p>&nbsp;</p>
+
+		   <p><img src="$webdb[www_url]/upload_files/$fidDB[logo]" width="600" /></p>
+
+
           <p>$fidDB[descrip]</p>
+		  
+		  <p><a href="http://www.zwa.cc/form/form.php?mid=9" target="_blank"><img src="$webdb[www_url]/images/default/zxxj.jpg"></a></p>
+
+
+
 <!--include
 EOT;
-@include("$tableTPL");print<<<EOT
+@include("$tableTPL");
+print <<<EOT
 include-->
-          <!--include
+<!--include
 EOT;
-//小栏目的标题
-if($data){@include("$listTPL");}print<<<EOT
+@include("$listTPL");
+print <<<EOT
 include-->
           
 </tbody></table><p>&nbsp;</p>
           <div style="text-align: right;display:none">
             <a editurl="http://www.zwa.cc/do/job.php?job=bencandy&amp;fid=46&amp;id=696&amp;&amp;type=&amp;act=do">2013-09-14 16:23:13</a> 浏览:<font id="hits">583</font>次
           </div>  
+	  
 $showpage
-              
+          
         </div></div>
 			</div>
 			<div id="right">

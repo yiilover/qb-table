@@ -135,12 +135,18 @@ if(!$listTPL){
 
 require(ROOT_PATH."inc/head.php");
 $isspesort = isspesort($fid);
-if($isspesort==1){
-	$data = get_module_content('article_content_'.$fidDB[fmid],$fid,$fidDB[fmid]);
-	$fup = isspesort($fid,1);
-	$choose = " WHERE fup=".$fup;
-	$showpage = getpage2("qb_sort",$choose,"list.php?fid=",1,"",$fid);
 
+if($isspesort==1){
+	$page = isset($_GET['page'])?$_GET['page']:1;
+	$num = 70;
+	$data = get_module_content('article_content_'.$fidDB[fmid],$fid,$fidDB[fmid],$page, $num);
+	//print_r('<pre>');
+	//print_r($data);die;
+	//$fup = isspesort($fid,1);
+	//$choose = " WHERE fup=".$fup;
+	//$showpage = getpage2("qb_sort",$choose,"list.php?fid=",1,"",$fid);
+	
+	$showpage=getpage("{$pre}article_content_".$fidDB[fmid],"WHERE fid=$fid ","list.php?fid=$fid",$num);	//文章列表分页
 	require(html("list",$FidTpl['list']));	
 }elseif($isspesort==2){
 	$sortarr=get_sub_cat($fid);

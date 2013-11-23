@@ -2348,7 +2348,7 @@ function isspesort($fid,$flag=0){
 	}
 	if($rs[fup]>=46&&$rs[fup]<=60){
 		$data = 1;//产品小分类
-	}elseif($rs[fup]==29){
+	}elseif($rs[fup]==29 || $fid==29){
 		$data = 2;//产品大分类
 	}else{
 		$data = 0;//普通
@@ -2377,9 +2377,10 @@ function get_sub_cat($fid){
 	return $data;
 }
 
-function get_module_content($table,$fid,$mid){
+function get_module_content($table,$fid,$mid,$page=1, $num=70){
 	global $db,$pre,$webdb;
-	$query=$db->query("SELECT * FROM {$pre}".$table." WHERE fid=".$fid);
+	$start = $page*$num;
+	$query=$db->query("SELECT * FROM {$pre}".$table." WHERE fid=".$fid. " limit ".$start. ", ".$num);
     while($rs = $db->fetch_array($query)){
 		$rows[]=$rs;
     }	
@@ -2394,6 +2395,7 @@ function get_module_content($table,$fid,$mid){
 		$rows2[]=$rs2;
     }		
 	foreach($rows as $k=>$r){
+	//if($k>80) continue;
 		$data[$k][aid]=$r[aid];
 		$data[$k][fid]=$r[fid];
 		foreach($r as $i=>$v){

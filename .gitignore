@@ -1,2 +1,6 @@
 /data/config.php
 /data/mysql_config.php
+/cache/
+/cache/**
+/diguo/
+/diguo/**
