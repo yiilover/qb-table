@@ -86,7 +86,7 @@ require(ROOT_PATH."inc/label_module.php");
 $listdb_moresort=ListMoreSort();
 
 //列表页多少篇文章,栏目设置的话.以栏目为标准,否则与系统为标准,系统不存在就默认20
-$rows=$fidDB[maxperpage]?$fidDB[maxperpage]:($webdb[list_row]?$webdb[list_row]:70);	
+$rows=$fidDB[maxperpage]?$fidDB[maxperpage]:($webdb[list_row]?$webdb[list_row]:50);	
 
 $listdb=ListThisSort($rows,$webdb[ListLeng]?$webdb[ListLeng]:50);		//本栏目文章列表
 $page_sql=$webdb[viewNoPassArticle]?'':' AND yz=1 ';
