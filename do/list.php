@@ -86,12 +86,12 @@ require(ROOT_PATH."inc/label_module.php");
 $listdb_moresort=ListMoreSort();
 
 //列表页多少篇文章,栏目设置的话.以栏目为标准,否则与系统为标准,系统不存在就默认20
-$rows=$fidDB[maxperpage]?$fidDB[maxperpage]:($webdb[list_row]?$webdb[list_row]:20);	
+$rows=$fidDB[maxperpage]?$fidDB[maxperpage]:($webdb[list_row]?$webdb[list_row]:70);	
 
 $listdb=ListThisSort($rows,$webdb[ListLeng]?$webdb[ListLeng]:50);		//本栏目文章列表
 $page_sql=$webdb[viewNoPassArticle]?'':' AND yz=1 ';
 $erp=$fidDB[iftable]?$fidDB[iftable]:"";
-$showpage=getpage("{$pre}article$erp","WHERE fid=$fid $page_sql","list.php?fid=$fid",$rows);	//文章列表分页
+$showpage=getpage("{$pre}article$erp","WHERE fid={$fid} $page_sql","list.php?fid=$fid",$rows);	//文章列表分页
 
 //相关栏目名称模板
 if(is_file(html("$webdb[SideSortStyle]"))){
@@ -138,15 +138,17 @@ $isspesort = isspesort($fid);
 
 if($isspesort==1){
 	$page = isset($_GET['page'])?$_GET['page']:1;
-	$num = 70;
+	$num = 50;
 	$data = get_module_content('article_content_'.$fidDB[fmid],$fid,$fidDB[fmid],$page, $num);
 	//print_r('<pre>');
 	//print_r($data);die;
 	//$fup = isspesort($fid,1);
 	//$choose = " WHERE fup=".$fup;
 	//$showpage = getpage2("qb_sort",$choose,"list.php?fid=",1,"",$fid);
-	
-	$showpage=getpage("{$pre}article_content_".$fidDB[fmid],"WHERE fid=$fid ","list.php?fid=$fid",$num);	//文章列表分页
+	//print_r($data);die;
+	//$showpage=getpage2("{$pre}article_content_".$fidDB[fmid]," WHERE fid=$fid "," list.php?fid=$fid ",$num);	//文章列表分页
+    //echo $showpage;die;
+	//echo html("list",$FidTpl['list']);die;
 	require(html("list",$FidTpl['list']));	
 }elseif($isspesort==2){
 	$sortarr=get_sub_cat($fid);

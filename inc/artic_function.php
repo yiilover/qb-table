@@ -2377,9 +2377,9 @@ function get_sub_cat($fid){
 	return $data;
 }
 
-function get_module_content($table,$fid,$mid,$page=1, $num=70){
+function get_module_content($table,$fid,$mid,$page=1, $num=50){
 	global $db,$pre,$webdb;
-	$start = $page*$num;
+	$start = ($page-1)*$num;
 	$query=$db->query("SELECT * FROM {$pre}".$table." WHERE fid=".$fid. " limit ".$start. ", ".$num);
     while($rs = $db->fetch_array($query)){
 		$rows[]=$rs;
