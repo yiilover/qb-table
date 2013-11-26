@@ -7,7 +7,7 @@ if(!$fidDB){
 	showerr("资料有误");
 }
 if($fidDB[allowpost]&&!in_array($groupdb['gid'],explode(',',$fidDB[allowpost]))){
-	showerr("你所在用户组无权限");
+	//showerr("你所在用户组无权限");
 }
 
 if($fidDB[endtime]&&$fidDB[endtime]<$timestamp){
@@ -76,7 +76,7 @@ if($_FILES){
 if($action=="postnew")
 {
 	if(!check_imgnum($yzimg)){		
-		showerr("验证码不符合,发布失败");
+		//showerr("验证码不符合,发布失败");
 	}
 	foreach( $m_config[field_db] AS $key=>$rs )
 	{
@@ -336,6 +336,19 @@ elseif($action=="edit")
 }
 else
 {
+
+	if($_GET[fid] && $_GET[aid]){
+		$fid = $_GET[fid];
+		$aid = $_GET[aid];
+		$a = $db->get_one("SELECT fup,name FROM {$pre}sort WHERE fid='$fid'");
+		$fupid = $a[fup];
+		$name2 = $a[name]; //二级分类
+		$b = $db->get_one("SELECT name FROM {$pre}sort WHERE fid='$fupid'");
+		$name1 = $b[name]; //一级分类
+		$c = $db->get_one("SELECT title FROM {$pre}article WHERE aid='$aid'");
+		$title = $c[title];
+		$res = $name1 . ' - ' .$name2. ' - ' .$title;
+	}
 	//URL变量做处理
 	//if(is_array($rsdb)){
 	if($rsdb=$_GET[rsdb]){
