@@ -160,4 +160,22 @@ border-bottom: 1px dotted #808080;
 color: #000;
 }
 
+.quote  {
+    border-collapse: collapse;color: #7F7F7F;font-size:12px
+}
+
+.t {
+    background: none repeat scroll 0 0 #EFF0F1;
+    line-height: 12px;
+
+}
+.quote td {
+    border: 1px solid #DDDDDD;
+    padding: 1px 2px;
+}
+
+.font_red {
+    color: #AD3734;
+}
+
 
